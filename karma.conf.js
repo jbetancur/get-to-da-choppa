@@ -1,49 +1,53 @@
-var webpackConfig = require('./src/tests/tests.webpack');
+// Karma configuration
 
-// Reference: http://karma-runner.github.io/0.12/config/configuration-file.html
-module.exports = function karmaConfig (config) {
-  config.set({
-    frameworks: [
-      // Reference: https://github.com/karma-runner/karma-jasmine
-      // Set framework to jasmine
-      'jasmine'
-    ],
+module.exports = function(config) {
+    config.set({
+        // ... normal karma configuration
+        files: [
+            'src/tests/tests_index.js',
+            './node_modules/phantomjs-polyfill/bind-polyfill.js'
+        ],
+        reporters: ['spec'],
+        browsers: [ 'PhantomJS' ], //run in Chrome
+        singleRun: true, //just run once by default
+        frameworks: [ 'jasmine' ], //use the jasmime test framework
+        preprocessors: {
+            // add webpack as preprocessor
+            'src/tests/tests_index.js': ['webpack', 'sourcemap']
+        },
+        webpack: {
+            // karma watches the test entry points
+            // (you don't need to specify the entry option)
+            // webpack watches dependencies
 
-    reporters: [
-      // Reference: https://github.com/mlex/karma-spec-reporter
-      // Set reporter to print detailed results to console
-      'spec',
-
-      // Reference: https://github.com/karma-runner/karma-coverage
-      // Output code coverage files
-      'coverage'
-    ],
-
-    files: [
-      // Grab all files in the app folder that contain .test.
-      'src/tests/tests.webpack.js'
-    ],
-
-    preprocessors: {
-      // Reference: http://webpack.github.io/docs/testing.html
-      // Reference: https://github.com/webpack/karma-webpack
-      // Convert files with webpack and load sourcemaps
-      'src/tests/tests.webpack.js': ['webpack', 'sourcemap']
-    },
-
-    browsers: [
-      // Run tests using PhantomJS
-      'PhantomJS'
-    ],
-
-    singleRun: true,
-
-    // Configure code coverage reporter
-    coverageReporter: {
-      dir: 'build/coverage/',
-      type: 'html'
-    },
-
-    webpack: webpackConfig
-  });
+            // webpack configuration
+            devtool: 'inline-source-map', //just do inline source maps instead of the default
+            module: {
+              loaders: [
+                  { test: /\.js$/,
+                    loader: 'babel-loader',
+                    exclude: /node_modules|bower_components/
+                  },
+                  {
+                    test: /\.html$/,
+                    loader: 'raw-loader'
+                  },
+                  {
+                    test: /\.scss$/,
+                    loader: 'style-loader!css-loader!sass-loader?sourceMap'
+                  },
+                  {
+                    test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+                    loader: 'file-loader'
+                  }
+              ]
+            }
+        },
+        watch: true,
+        webpackMiddleware: {
+            // webpack-dev-middleware configuration
+            // i. e.
+            noInfo: true
+        }
+    });
 };
