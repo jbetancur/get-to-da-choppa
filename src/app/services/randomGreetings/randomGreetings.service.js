@@ -46,7 +46,11 @@ class RandomGreetings {
           movie: 'Conan the Barbarian (1982)'
         },
         {
-          quote: '"Do it. DO IT! Come on, kill me, I\'m here! COME ON, DO IT NOW, KILL MEEEE!!',
+          quote: 'Do it. DO IT! Come on, kill me, I\'m here! COME ON, DO IT NOW, KILL MEEEE!!',
+          movie: 'Predator (1987)'
+        },
+        {
+          quote: 'GET TO THE CHOPPAAAAAAAA',
           movie: 'Predator (1987)'
         }
       ]
@@ -85,7 +89,6 @@ export default angular.module('services.random-greetings', [])
   //   "Guard: \"Give us the girl or we'll take her.\"<br />Arnold: \"Enough talk!\"<br /><span class=\"action\">*throws knife into guard's chest*</span><br />-- Conan the Destroyer (1984)",
   //   "\"Into the boat!\"-- Conan the Destroyer (1984)",
   //   "\"Into the tunnel!\"-- Conan the Destroyer (1984)",
-  //   "\"GET TO THE CHOPPAAAAAAAA\"-- Predator (1987)",
   //   "Lori: \"Sweetheart.. we're married!\"<br />Arnold: \"Consider that a divorce.\"-- Total Recall (1990)",
   //   "\"Chill out... dickwad.\"-- Terminator 2: Judgment Day (1991)",
   //   "\"Hello, cutie pie! One of us is in deeeep trouble.\"-- The Running Man (1987)",
