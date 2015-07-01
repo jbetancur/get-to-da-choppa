@@ -1,0 +1,24 @@
+{
+	"preset": "default",
+	"indent": {
+		"value": "    ",
+        "CallExpression": 0,
+        "ReturnStatement": 0,
+        "SwitchStatement": 0
+	},
+	"whiteSpace": {
+		"after": {
+			"FunctionReservedWord": 1
+		}
+	},
+	"plugins": [
+		"esformatter-quotes",
+		"esformatter-braces",
+		"esformatter-semicolons",
+		"esformatter-dot-notation"
+	],
+	"quotes": {
+		"type": "single",
+		"avoidEscape": true
+	}
+}
