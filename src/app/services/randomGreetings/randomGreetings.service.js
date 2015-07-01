@@ -44,6 +44,10 @@ class RandomGreetings {
         {
           quote: 'Jehnna: \"Conan, what is best in life? Arnold: \"To crush your enemies, see them driven before you, and hear the lamentation of their women.\"',
           movie: 'Conan the Barbarian (1982)'
+        },
+        {
+          quote: '"Do it. DO IT! Come on, kill me, I\'m here! COME ON, DO IT NOW, KILL MEEEE!!',
+          movie: 'Predator (1987)'
         }
       ]
     };
@@ -231,7 +235,6 @@ export default angular.module('services.random-greetings', [])
   //   "\"What about the guy you lobotomized? Did he get a refund?\"-- Total Recall (1990)",
   //   "Benny: \"Hey man, I got five kids to feed!\"<br /><span class=\"action\">*hands him a wad of cash*</span><br />Arnold: \"Take them to the dentist.\"-- Total Recall (1990)",
   //   "\"Relax. You'll live longer.\"-- Total Recall (1990)",
-  //   "\"Do it. DO IT! Come on, kill me, I'm here! COME ON, DO IT NOW, KILL MEEEE!!\"-- Predator (1987)",
   //   "\"WOOOAAAHHHHHHHHHHHH\"-- Predator (1987)",
   //   "\"ARRRRRRRGGGGGGGH\"-- Jingle All the Way (1996)",
   //   "\"GAAAAAAGGHHHHHH!\"-- True Lies (1994)",
