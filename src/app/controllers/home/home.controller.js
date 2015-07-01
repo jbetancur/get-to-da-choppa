@@ -1,10 +1,10 @@
 export default class HomeCtrl {
   constructor(randomGreetings) {
     this.random = randomGreetings;
-    this.name = 'Get To Da Choppa!';
+    this.randomGreeting();
   }
 
   randomGreeting() {
-    this.name = this.random.getGreeting();
+    this.greeting = this.random.getGreeting();
   }
 }

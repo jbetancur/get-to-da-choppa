@@ -1,0 +1,14 @@
+$movie-color: #808080;
+
+.greeting-quote {
+  font-size: 2em;
+  line-height: 1.5;
+}
+
+.greeting-movie {
+  color: $movie-color;
+  font-size: 1.3em;
+  font-style: italic;
+  padding-bottom: 20px;
+  padding-left: 20%;
+}

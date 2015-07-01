@@ -1,12 +1,14 @@
 import angular from 'angular';
+import './greeting.scss';
+import template from './greeting.html';
 
 function greeting() {
   return {
     restrict: 'E',
     scope: {
-      name: '='
+      greeting: '='
     },
-    template: '<h1>Hello, {{name}}</div>'
+    template: template
   };
 }
 

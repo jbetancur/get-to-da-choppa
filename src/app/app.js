@@ -1,4 +1,4 @@
-import './styles/app.scss';
+import './app.scss';
 
 import routing from './app.config';
 import angular from 'angular';
