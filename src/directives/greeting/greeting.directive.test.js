@@ -1,31 +1,19 @@
-//
-// describe('Greeting directive', ()=> {
-//   const greetings = { greetings: [{quote: 'Get to da Choppaaaa!', movie: 'Predator (1987)'}, {quote: 'Dillon! you sonofabitch.', movie: 'Predator (1987)'}] };
-//   it('should display a greeting', ()=> {
-//     expect(greetings).toEqual(greetings);
-//   });
-// });
-
-// import '../src/app/app.js';
+import { name } from '../../app';
 import angular from 'angular';
-import mock from 'angular-mocks/angular-mocks';
+
 describe('Directive: Greeting', function () {
-
-    var elem,
-        parentScope;
-
-    beforeEach(function () {
-        mock.module('choppaApp.directives');
-        mock.inject(function ($compile, $rootScope) {
-            parentScope = $rootScope.$new();
-            elem = angular.element('<greeting></greeting>');
-            $compile(elem)(parentScope);
-            parentScope.$digest();
-        });
+  let element, parentScope;
+  beforeEach(()=> {
+    angular.mock.module(name);
+    angular.mock.inject(($compile, $rootScope)=> {
+      parentScope = $rootScope.$new();
+      element = angular.element('<greeting greeting="{ quotes:[ { quote: \'I am\', movie: \'a test\'} ] }"></greeting>');
+      $compile(element)(parentScope);
+      parentScope.$digest();
     });
+  });
 
-    it('should say some badass arnold quote', () => {
-      console.log(elem);
-        expect(elem.find('div').text().match(/Get/g).length).toEqual(0);
-    });
+  it('should accept a greeting object', () => {
+    expect(element.isolateScope().greeting instanceof Object).toBe(true);
+  });
 });

@@ -1,17 +1,47 @@
-import home from './index';
+import { name } from '../../app';
 import angular from 'angular';
 
-describe('Controller: Home', function() {
-  let $controller;
+let myController, scope, $randomGreetings;
 
-  beforeEach(angular.mock.module(home));
+// Provide any mocks needed
+angular.mock.module(($provide)=> {
+  $provide.value('$randomGreetings', new $randomGreetings());
+});
 
-  beforeEach(angular.mock.inject(function(_$controller_) {
-    $controller = _$controller_;
-  }));
+describe('Controller: HomeCtrl', ()=> {
+  beforeEach(()=> {
+    angular.mock.module(name);
+    inject(($controller, _$randomGreetings_)=> {
+      scope = {};
+      $randomGreetings = _$randomGreetings_;
+      myController = $controller('HomeCtrl', {
+        $scope: scope
+      });
+    });
+  });
 
-  it('name is initialized to World', function() {
-    let ctrl = $controller('HomeCrtl');
-    expect(ctrl.name).toBe('choppaApp.home');
+  it('should exist', ()=> {
+    expect(!!myController).toBe(true);
+  });
+
+  it('the greeting quote has a value length > than 0', ()=> {
+    expect(myController.greeting.quote.length).toBeGreaterThan(0);
+  });
+
+  it('should provide a randomGreeting function', ()=> {
+    expect(typeof myController.randomGreeting).toBe('function');
+  });
+
+  it('should provide a greeting variable with an Object value', ()=> {
+    expect(myController.greeting).toBeDefined();
+    expect(myController.greeting instanceof Object).toBe(true);
+  });
+
+  describe('when created', ()=> {
+    // Add specs
+  });
+
+  describe('when destroyed', ()=> {
+    // Add specs
   });
 });

@@ -23,6 +23,7 @@
     "expect": false,
     "pending": false,
     "spyOn": false,
-    "inject": false
+    "inject": false,
+    "jasmine": false
   }
 }

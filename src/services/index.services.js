@@ -5,6 +5,6 @@ import RandomGreetings from './randomGreetings/randomGreetings.service';
 const moduleName = 'choppaApp.services';
 
 angular.module(moduleName, [])
-  .service('randomGreetings', RandomGreetings);
+  .service('$randomGreetings', RandomGreetings);
 
 export default moduleName;
