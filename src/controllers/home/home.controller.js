@@ -1,3 +1,5 @@
+import './home.controller.scss';
+
 export default class HomeCtrl {
   constructor(randomGreetings) {
     this.random = randomGreetings;
@@ -8,3 +10,5 @@ export default class HomeCtrl {
     this.greeting = this.random.getGreeting();
   }
 }
+
+HomeCtrl.$inject = ['randomGreetings'];

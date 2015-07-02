@@ -4,16 +4,16 @@ module.exports = function(config) {
     config.set({
         // ... normal karma configuration
         files: [
-            'src/tests/tests_index.js',
+            'tests/tests_index.js',
             './node_modules/phantomjs-polyfill/bind-polyfill.js'
         ],
         reporters: ['spec'],
-        browsers: [ 'PhantomJS' ], //run in Chrome
+        browsers: [ 'PhantomJS' ], //run in Chrome, PhantomJS
         singleRun: true, //just run once by default
         frameworks: [ 'jasmine' ], //use the jasmime test framework
         preprocessors: {
             // add webpack as preprocessor
-            'src/tests/tests_index.js': ['webpack', 'sourcemap']
+            'tests/tests_index.js': ['webpack', 'sourcemap']
         },
         webpack: {
             // karma watches the test entry points
@@ -43,6 +43,9 @@ module.exports = function(config) {
               ]
             }
         },
+        colors: true,
+        logLevel: config.LOG_INFO,
+        autoWatch: true,
         watch: true,
         webpackMiddleware: {
             // webpack-dev-middleware configuration

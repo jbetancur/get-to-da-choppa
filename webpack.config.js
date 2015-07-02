@@ -2,7 +2,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-      app: ['webpack/hot/dev-server', './src/app/bootstrap.js']
+      app: ['webpack/hot/dev-server', './src/bootstrap.js']
     },
     output: {
         path: './build',
@@ -11,7 +11,7 @@ module.exports = {
     plugins: [
       new HtmlWebpackPlugin({
         title: 'Choppa App',
-        template: './src/app/index.html'
+        template: './src/index.html'
       })
     ],
     module: {

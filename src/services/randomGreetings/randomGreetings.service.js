@@ -1,8 +1,6 @@
-import angular from 'angular';
 
-class RandomGreetings {
+export default class RandomGreetings {
   constructor() {
-    // this.greetings = ['Stay Tuned!', 'It\'s not a Tuma!!!', 'Keep on Clickin...'];
   this.greetings = {
     quotes: [
         {
@@ -65,8 +63,7 @@ class RandomGreetings {
   }
 }
 
-export default angular.module('services.random-greetings', [])
-  .service('randomGreetings', RandomGreetings).name;
+RandomGreetings.$inject = [];
 
   //   "Bystander: \"HEY! What the hell did you do to him, man?!\"<br />Arnold: \"I did nothing. The pavement was his enemy.\"-- Twins (1988)",
   //   "Terrorist: \"If you want your kid back, you're gonna have to cooperate. Right?\"<br />Arnold: \"Wrong.\"<br />*shot to the head*<br />-- Commando (1985)",
