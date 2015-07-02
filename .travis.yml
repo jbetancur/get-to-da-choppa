@@ -6,4 +6,3 @@ branches:
     - feature/structure
 before_script:
   - webpack
-  - gulp build
