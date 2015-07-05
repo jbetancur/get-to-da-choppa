@@ -11,6 +11,7 @@ export default class HomeCtrl {
   randomGreeting() {
     this.greeting = this.randomSvc.getGreeting();
   }
+
 }
 
 HomeCtrl.$inject = ['$randomGreetings'];

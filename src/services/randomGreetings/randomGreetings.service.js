@@ -61,6 +61,7 @@ export default class RandomGreetings {
     return this.greetings.quotes[rand];
 
   }
+
 }
 
 RandomGreetings.$inject = [];
