@@ -12,7 +12,7 @@ npm install -g karma karma-cli webpack webpack-dev-server
 npm start
 ```
 
-### Testing
+### Test It
 ```
 npm test
 ```
