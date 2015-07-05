@@ -1,0 +1,29 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0,
+    "quotes": [2, "single"]
+  },
+  "env": {
+    "browser": true,
+    "amd": true
+  },
+  "globals": {
+    "module": false,
+    "gulp": false,
+    "global": false,
+    "describe": false,
+    "xdescribe": false,
+    "ddescribe": false,
+    "it": false,
+    "xit": false,
+    "iit": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "expect": false,
+    "pending": false,
+    "spyOn": false,
+    "inject": false,
+    "jasmine": false
+  }
+}
