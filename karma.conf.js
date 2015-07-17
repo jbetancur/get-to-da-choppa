@@ -13,7 +13,7 @@ module.exports = function (config) {
     ],
     reporters: ['progress', 'coverage'],
     browsers: ['PhantomJS'], //run in Chrome, PhantomJS
-    singleRun: false, //just run once by default
+    singleRun: true, //just run once by default
     frameworks: ['jasmine'], //use the jasmime test framework
     preprocessors: {
       // add webpack first as preprocessor
