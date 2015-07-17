@@ -1,7 +1,7 @@
 {
 	"preset": "default",
 	"indent": {
-		"value": "    ",
+		"value": "  ",
         "CallExpression": 0,
         "ReturnStatement": 0,
         "SwitchStatement": 0

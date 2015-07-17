@@ -12,3 +12,4 @@ export const name = 'choppaApp';
 export default angular.module(name, [uirouter, controllers, directives, services])
   .config(routeConfig)
   .config(appConfig);
+  // $compileProvider.debugInfoEnabled(false);

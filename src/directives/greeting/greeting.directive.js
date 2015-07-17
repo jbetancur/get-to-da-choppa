@@ -13,4 +13,4 @@ function greeting() {
 }
 
 export default greeting;
-// greeting.$inject = [];
+greeting.$inject = [];
