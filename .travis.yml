@@ -3,6 +3,6 @@ node_js:
   - "0.12"
 branches:
   only:
-    - feature/structure
+    - master
 before_script:
   - webpack
